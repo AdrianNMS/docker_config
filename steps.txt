@@ -1,7 +1,1 @@
-docker build -t test .
 
-docker run --name prueba -p 8080:8080 test
-
-mvn install 
-
-mvn spring-boot:run 
