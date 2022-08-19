@@ -29,7 +29,8 @@ services:
       - "8087:8087"
 
   # docker-compose up -d
-  # wget ip:8888/person/default funciona
+  # wget 172.29.0.2:8888/person/default funciona
+  # wget config_server:8888/person/default no funciona
 
   # docker build -t test .
 
