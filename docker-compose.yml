@@ -1,0 +1,40 @@
+version: "3.9"
+services:
+  config_server:
+    build: "config/."
+    command: ["bash", "-c", "cd /home; git clone https://github.com/AdrianNMS/config_server.git; cd config_server; mvn install; mvn spring-boot:run"]
+    ports:
+      - "8888:8888"
+    expose:
+      - "8888"
+  eureka-server:
+    build: "config/."
+    command: ["bash", "-c", "cd /home; git clone https://github.com/AdrianNMS/eureka-server.git; cd eureka-server; mvn install; mvn spring-boot:run"]
+    ports:
+      - "8761:8761"
+    expose:
+      - "8761"
+
+  api-gateway:
+    build: "config/."
+    command: ["bash", "-c", "cd /home; git clone https://github.com/AdrianNMS/api-gateway.git; cd api-gateway; mvn install; mvn spring-boot:run"]
+    ports:
+      - "8850:8850"
+    expose:
+      - "8850"
+  parameter:
+    build: "microservice/."
+    command: ["bash", "-c", "cd /home; git clone https://github.com/AdrianNMS/parameter.git; cd parameter; mvn install; mvn spring-boot:run"]
+    ports:
+      - "8087:8087"
+
+  # docker-compose up -d
+  # wget ip:8888/person/default funciona
+
+  # docker build -t test .
+
+  # docker run --name prueba -p 8080:8080 test
+
+  # mvn install 
+
+  # mvn spring-boot:run 
