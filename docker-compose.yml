@@ -24,11 +24,12 @@ services:
       - "8850"
   parameter:
     build: "microservice/."
-    command: ["bash", "-c", "cd /home; git clone https://github.com/AdrianNMS/parameter.git; cd parameter; mvn install; mvn spring-boot:run"]
+    command: ["bash", "-c", "cd /home; git clone https://github.com/AdrianNMS/person.git; cd person; mvn install; mvn spring-boot:run"]
     ports:
-      - "8087:8087"
+      - "8081:8081"
     expose:
-      - "8087"
+      - "8081"
+ 
   
   # docker-compose up -d
   # wget 172.29.0.2:8888/person/default funciona
