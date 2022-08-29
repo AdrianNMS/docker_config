@@ -22,7 +22,7 @@ services:
       - "8850:8850"
     expose:
       - "8850"
-  parameter:
+  person:
     build: "microservice/."
     command: ["bash", "-c", "cd /home; git clone https://github.com/AdrianNMS/person.git; cd person; mvn install; mvn spring-boot:run"]
     ports:
